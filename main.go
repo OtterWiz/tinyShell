@@ -20,15 +20,13 @@ func main() {
 				Name:        "port",
 				Aliases:     []string{"p"},
 				Usage:       "set the port on the listener",
-				Value:       port,
 				Destination: &port,
 				Required:    true,
 			},
 			&cli.StringFlag{
-				Name:        "host",
-				Aliases:     []string{"h"},
+				Name:        "address",
+				Aliases:     []string{"a"},
 				Usage:       "set the address the shell should connect to",
-				Value:       host,
 				Destination: &host,
 				Required:    true,
 			},
@@ -37,7 +35,6 @@ func main() {
 				Aliases:     []string{"t"},
 				Usage:       "payload type",
 				Destination: &payloadType,
-				Value:       payloadType,
 				Required:    true,
 			},
 		},
@@ -64,7 +61,7 @@ func generatePayload(host, port, payloadType string) {
 		fmt.Println(bashShell)
 		return
 	default:
-		fmt.Println("Payload type  '", payloadType, "' is unsupported.")
+		fmt.Printf("Payload type '%v' is unsupported.\n", payloadType)
 		return
 	}
 }
