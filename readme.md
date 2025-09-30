@@ -1,33 +1,44 @@
 # tinyshell 🐚
+```
+NAME:
+   tinyshell - generate reverse shell payloads!
 
-A minimalistic command-line tool to quickly generate common reverse shell payloads.
+USAGE:
+   tinyshell
 
-## Description
+OPTIONS:
+   --port string, -p string     set the port on the listener
+   --address string, -a string  set the address the shell should connect to
+   --type string, -t string     payload type
+   --help, -h                   show help
 
-`tinyshell` simplifies the process of creating one-liner reverse shell payloads. Instead of manually typing or looking up the syntax for different shell types, you can use this tool to generate them by simply providing the listener's IP address, port, and the desired payload type.
+```
 
 -----
 
 ## Installation
+tinyshell runs on Windows, MacOS, and of course, Linux. 
 
-To install `tinyshell`, you'll need to have [Go](https://go.dev/doc/install) installed.
+v1 will include the ability to install via package managers like apt and yum. However, each release includes binaries for the above supported OS's. 
+
+### Binary
+Install the latest binary for your target architecture from the [releases page](https://github.com/OtterWiz/tinyshell/releases) 
+### Go
+Have Go installed? Well here you *go*:
 
 ```bash
 go install github.com/OtterWiz/tinyshell@latest
 ```
+
+
+
 -----
 
 ## Usage
 
 The tool requires three flags to generate a payload: address, port, and type.
 
-### Flags
-
-| Flag | Alias | Description | Required |
-| :--- | :---: | :--- | :---: |
-| `--address` | `-a` | The listener's IP address (the address the shell connects back to). | Yes |
-| `--port` | `-p` | The listener's port. | Yes |
-| `--type` | `-t` | The type of payload to generate. | Yes |
+Example: `tinyShell --port 9001 --address 10.10.10.10 --type php`
 
 ### Supported Payloads (so far...)
 
