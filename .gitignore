@@ -1,1 +1,3 @@
-bin/*
+bin/
+# Added by goreleaser init:
+dist/
